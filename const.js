@@ -1,3 +1,3 @@
-const ID = "Hello,World";
+const ID = process.env.ID;
 
 export default ID;
