@@ -14,4 +14,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Deploy to GitHub Pages
-        run: rsync -av --exclude='config.json' https://github.com/jojiyamaguchi/GhostCoderTest6/ https://jojiyamaguchi.github.io/GhostCoderTest6/
+        run: rsync -av --exclude='config.json' ./ https://jojiyamaguchi.github.io/GhostCoderTest6/
