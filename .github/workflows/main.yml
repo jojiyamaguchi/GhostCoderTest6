@@ -10,9 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-           
+      - name: Create secret.js
+        run: touch ./src/secret.js
+
       - name: Inject Secret ID
-        run: echo "export const SS_ID = '${{ secrets.SS_ID }}';" > src/secret.js
+        run: echo "export const SS_ID = '${{ secrets.SS_ID }}';" > ./src/secret.js
       
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
