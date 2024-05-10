@@ -1,0 +1,16 @@
+{
+  "name": "ghostcodertest6",
+  "version": "1.0.0",
+  "description": "AI code generation",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "GhostCoderTest6"
+  },
+  "author": "Joji Yamaguchi <jojisdogakane@gmail.com>",
+  "license": "ISC"
+}
