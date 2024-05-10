@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Inject Secrets
 
 on:
   push:
@@ -11,9 +11,10 @@ jobs:
 
     steps:
 
-      - name: Create secret.js
-        run: touch secret.js
-
-      - name: Inject Secret ID
-        run: echo "export const SS_ID = '${{ secrets.SS_ID }}';" > secret.js
-
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifact: github-pages
+          exclude: |
+            config.json

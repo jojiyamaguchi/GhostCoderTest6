@@ -2,9 +2,16 @@
   <head>
   </head>
   <body>
-    <script type="module">
-      import SS_ID from './secret.js';;
-      console.log("SS_ID = ", SS_ID);
+    <script>
+
+      fetch('config.json')
+        .then(response => response.json())
+        .then(data => {
+          const SS_ID = data.SS_ID;
+          console.log("SS_ID = ", SS_ID);
+        })
+        .catch(error => console.error('Error loading config.json:',  error));
+      
     </script>
     </script>
   </body>
