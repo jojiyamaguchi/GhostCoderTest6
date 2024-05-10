@@ -8,20 +8,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
 
     steps:
-      - name: Check path
-        run: pwd
 
       - name: Create secret.js
         run: touch secret.js
 
       - name: Inject Secret ID
         run: echo "export const SS_ID = '${{ secrets.SS_ID }}';" > secret.js
-      
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+
