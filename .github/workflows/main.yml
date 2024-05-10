@@ -6,15 +6,12 @@ on:
       - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-
+    
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          artifact: github-pages
-          exclude: |
-            config.json
+        run: rsync -av --exclude='config.json' https://github.com/jojiyamaguchi/GhostCoderTest6/ https://jojiyamaguchi.github.io/GhostCoderTest6/
